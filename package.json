@@ -1,0 +1,18 @@
+{
+  "name": "doto_app",
+  "version": "1.0.0",
+  "description": "\"first todo app\"",
+  "main": "index.js",
+  "scripts": {
+    "start":"nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lokendra sharma",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.25",
+    "nodemon": "^2.0.4"
+  }
+}

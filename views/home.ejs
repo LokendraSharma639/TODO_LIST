@@ -1,0 +1,45 @@
+<html>
+
+  <head>
+    <title>To-Do-List</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <script src="https://kit.fontawesome.com/997cc280fa.js"></script>
+  </head>
+
+  <body>
+    <div id="container">
+      <h1 style="text-align: center"><i class="fas fa-th-list"></i> To Do List</h1>
+      <form action="create-list" method="POST">
+        <label for="description">Description</label>
+        <input type="text" placeholder="What do you need to do?" name="description" required id="description">
+        <select id="dropdown" name="category">
+          <option value="Personal" id="option">Personal</option>
+          <option value="Work">Work</option>
+          <option value="Cleaning">Cleaning</option>
+          <option value="Others">Others</option>
+        </select>
+        <input type="date" name="date" required id="date"><br>
+        <button type="submit" id="add-task"><i class="fas fa-plus"></i> Add Task</button>
+
+      </form>
+      <div id="list-container">
+        <form action="delete-task" method="POST">
+          <button type="submit" id="delete-task"><i class="fas fa-trash-alt"></i> Delete</button>
+          <% for(let i of list){ %>
+          <div class="list_item">
+            <input type="checkbox" value="<%= i._id %>" style="margin-bottom:-10px" name="check<%= i._id %>"
+              class="checks">
+            <p>
+              <h2><%= i.description %></h2>
+              <div id="category_display"><%= i.category %></div>
+              <p><i class="far fa-calendar-alt"></i> <%= i.date %></p>
+            </p>
+          </div>
+          <% } %>
+        </form>
+      </div>
+    </div>
+
+  </body>
+
+</html>
